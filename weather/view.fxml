@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="634.0" prefWidth="476.0" style="-fx-background-color: #9cf;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="weather.BaseController">
+   <effect>
+      <InnerShadow choke="0.62" height="38.11" radius="16.61" width="30.33" />
+   </effect>
+   <children>
+      <AnchorPane prefHeight="85.0" prefWidth="476.0" style="-fx-background-color: #fff; -fx-background-radius: 20; -fx-border-radius: 6;">
+         <children>
+            <Text fontSmoothingType="LCD" layoutX="72.0" layoutY="73.0" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="0.0" text="WEATHER" wrappingWidth="367.6708984375">
+               <font>
+                  <Font name="Berlin Sans FB" size="73.0" />
+               </font>
+               <fill>
+                  <LinearGradient endX="1.0" endY="1.0" startX="0.9951456310679611" startY="0.3786407766990292">
+                     <stops>
+                        <Stop color="#c2da7c" />
+                        <Stop color="BLACK" offset="0.4607132708155726" />
+                        <Stop color="BLACK" offset="0.5130718954248367" />
+                        <Stop color="#080a08" offset="1.0" />
+                     </stops>
+                  </LinearGradient>
+               </fill>
+            </Text>
+         </children>
+      </AnchorPane>
+      <TextField fx:id="city" alignment="CENTER" layoutX="50.0" layoutY="118.0" prefHeight="36.0" prefWidth="377.0" style="-fx-background-radius: 8;" />
+      <TextField fx:id="town" alignment="TOP_LEFT" editable="false" focusTraversable="false" layoutX="14.0" layoutY="169.0" prefHeight="62.0" prefWidth="150.0" scaleShape="false" style="-fx-background-color: #9cf;" text="ГОРОД">
+         <font>
+            <Font name="Niagara Engraved" size="32.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="curCity" focusTraversable="false" layoutX="12.0" layoutY="216.0" prefHeight="110.0" prefWidth="304.0" scaleShape="false" style="-fx-background-color: #9cf;">
+         <font>
+            <Font name="Niagara Engraved" size="62.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="the_temp" editable="false" layoutX="266.0" layoutY="341.0" prefHeight="30.0" prefWidth="197.0" style="-fx-background-color: #9cf;">
+         <font>
+            <Font name="Felix Titling" size="34.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="min_temp" editable="false" layoutX="266.0" layoutY="394.0" prefHeight="65.0" prefWidth="182.0" style="-fx-background-color: #9cf;">
+         <font>
+            <Font name="Felix Titling" size="34.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="weather_state_name" editable="false" layoutX="186.0" layoutY="500.0" prefHeight="62.0" prefWidth="273.0" style="-fx-background-color: #9cf;" text=" ">
+         <font>
+            <Font name="Felix Titling" size="34.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="max_temp" layoutX="271.0" layoutY="448.0" prefHeight="49.0" prefWidth="185.0" style="-fx-background-color: #9cf;" text="  ">
+         <font>
+            <Font name="Felix Titling" size="34.0" />
+         </font>
+      </TextField>
+      <ImageView fx:id="weather" fitHeight="150.0" fitWidth="200.0" layoutX="272.0" layoutY="169.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@погода.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="30.0" fitWidth="52.0" layoutX="378.0" layoutY="120.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@поиск.jpg" />
+         </image>
+      </ImageView>
+      <Button fx:id="getData" defaultButton="true" layoutX="386.0" layoutY="121.0" mnemonicParsing="false" onAction="#search" prefHeight="25.0" prefWidth="34.0" style="-fx-opacity: 0;" />
+      <Button fx:id="getNext" layoutX="409.0" visible="false" layoutY="576.0" mnemonicParsing="false" onAction="#next" onKeyPressed="#onKeyRight" text="-&gt;" />
+      <Button fx:id="previous" layoutX="32.0" visible="false" layoutY="576.0" mnemonicParsing="false" onAction="#previous" onKeyPressed="#onKeyLeft" text="&lt;-" />
+      <Text layoutX="32.0" layoutY="386.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ТЕМПЕРАТУРА">
+         <font>
+            <Font name="Felix Titling" size="34.0" />
+         </font>
+      </Text>
+      <Text layoutX="32.0" layoutY="438.0" strokeType="OUTSIDE" strokeWidth="0.0" text="МИНИМУМ">
+         <font>
+            <Font name="Felix Titling" size="34.0" />
+         </font>
+      </Text>
+      <Text layoutX="32.0" layoutY="492.0" strokeType="OUTSIDE" strokeWidth="0.0" text="МАКСИМУМ">
+         <font>
+            <Font name="Felix Titling" size="34.0" />
+         </font>
+      </Text>
+      <Text layoutX="32.0" layoutY="545.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ОСАДКИ">
+         <font>
+            <Font name="Felix Titling" size="34.0" />
+         </font>
+      </Text>
+   </children>
+</AnchorPane>
